@@ -28,7 +28,7 @@ public class ClienteController {
     @GetMapping
     public List<Cliente> getClientes() {
         // Devuelv lista de clientes
-        return clienteService.getClientes();
+        return clienteService.getCliente();
     }
 
     @GetMapping("/buscar")
