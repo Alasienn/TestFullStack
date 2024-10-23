@@ -1,0 +1,47 @@
+<div class="container">
+    <h2>Administración de Clientes</h2>
+  
+    <!-- buscar -->
+    <div class="form-group">
+      <input type="text" placeholder="Buscar por shared key" class="form-control" />
+      <button (click)="buscarCliente()" class="btn btn-primary">Buscar</button>
+    </div>
+  
+    <!-- lista -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Shared Key</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes">
+          <td>{{ cliente.id }}</td>
+          <td>{{ cliente.nombre }}</td>
+          <td>{{ cliente.sharedKey }}</td>
+          <td>{{ cliente.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- formulario -->
+    <form [formGroup]="clienteForm"(ngSubmit)="crearCliente()">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" formControlName="nombre" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="sharedKey">Shared Key</label>
+        <input type="text" id="sharedKey" formControlName="sharedKey" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-success">Crear Cliente</button>
+    </form>
+  </div>
+  

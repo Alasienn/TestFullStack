@@ -41,21 +41,4 @@ public class ClienteService {
         return clienteRepository.save(cliente);
     }
 
-    /*public List<Cliente> getClientes() {
-        return clientes;
-    }
-
-    public List<Cliente> buscarPorSharedKey(String sharedKey) {
-        return clientes.stream()
-                .filter(cliente -> cliente.getSharedKey().equalsIgnoreCase(sharedKey))
-                .collect(Collectors.toList());
-    }
-
-    public Cliente crearCliente(Cliente cliente) {
-        cliente.setId(idCounter++);
-        clientes.add(cliente);
-        System.out.println(clientes.getClass());
-        System.out.println("test");
-        return cliente;
-    }*/
 }
